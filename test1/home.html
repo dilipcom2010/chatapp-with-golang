@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>hiii dilip</title>
+	<script>
+		if (window["WebSocket"]) 
+		{
+			conn = new WebSocket("ws://127.0.0.1:8080/chat");
+
+			conn.onclose = function(evt) {
+				//appendLog($("<div><b>Connection closed.</b></div>"))
+				document.getElementById("msg").innerHTML="bye"
+			}
+			conn.onmessage = function(evt) {
+				//appendLog($("<div/>").text(evt.data))
+				document.getElementById("msg").innerHTML= evt.data
+			}
+
+		} 
+		else 
+		{
+			appendLog($("<div><b>Your browser does not support WebSockets.</b></div>"))
+		}
+
+		function sendmsg()
+		{
+			if (!conn){
+				document.write(conn.send)
+			}
+			conn.send(document.getElementById("sendmsg").value)
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<style type="text/css">
+		.user
+		{
+			background-color: lightblue;
+			font-family: arial; font-size: 15px; line-height: 20px;
+			padding-top: 5px; padding-bottom: 5px; padding-left: 10px;
+			width: 100px;
+			margin-top: 2px;
+		}
+		.user:hover
+		{
+			cursor: pointer;
+			color: white; font-size: 18px;
+		}
+		.main-msg-box
+		{
+			border: 1px solid lightgreen;
+			height: 200px; width: 700px;
+			background-color: pink;
+		}
+		.msg-box
+		{
+			float: left;
+			border: 2px solid grey;
+			min-width: 20px; height: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome</h1>
+	<div class="users">
+		{{range $data := $}}
+		<div class="user" onclick="start_chat({{$data.id}})">{{$data.username}}</div>
+		{{end}}
+	</div>
+	<div id="msg"></div>
+	<input id="sendmsg" type="text"></input>
+	<input type="submit" value="send" onclick="sendmsg()"></input>
+	<div class="main-msg-box" id="main-msg-box"></div>
+	<script type="text/javascript">
+	function start_chat(id)
+	{
+		document.getElementById("main-msg-box").innerHTML = x+'<input type="text"></input>'
+	}
+	</script>
+</body>
+</html>

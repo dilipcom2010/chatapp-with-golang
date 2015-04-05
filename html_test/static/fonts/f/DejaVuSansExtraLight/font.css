@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'DejaVuSansExtraLight';
+	src: url('./DejaVuSansExtraLight.eot');
+	src: local('DejaVuSansExtraLight'), url('./DejaVuSansExtraLight.woff') format('woff'), url('./DejaVuSansExtraLight.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_31049">Text with this font applied</p> */
+.fontsforweb_fontid_31049 {
+	font-family: 'DejaVuSansExtraLight' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

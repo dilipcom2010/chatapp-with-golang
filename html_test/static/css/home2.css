@@ -1,0 +1,21 @@
+html
+{
+	height: 100%;
+}
+body
+{
+	height: 100%;
+}
+
+.users
+{
+	background-color: blue;
+}
+.messages
+{
+	background-color: pink;
+}
+.options
+{
+	background-color: yellow;
+}

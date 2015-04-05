@@ -1,0 +1,476 @@
+body::-webkit-scrollbar
+{
+  width: 0px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+.users-panel::-webkit-scrollbar
+{
+  width: 7px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+.users-panel::-webkit-scrollbar-track
+{
+  background-color: #2C353A;
+  border-radius: 10px;
+}
+.users-panel::-webkit-scrollbar-thumb
+{
+  background: #00988F;
+  border-radius: 10px;
+}
+
+
+
+
+@font-face {
+    font-family: para;
+    src: url("/static/fonts/paras/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: titles;
+    src: url("/static/fonts/paras/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: logo;
+    src: url("/static/fonts/logo/Oomix.ttf");
+}
+
+html
+{
+	height: 100%;
+}
+body
+{
+	height: 100%;
+}
+
+.navbar-fixed-top
+{
+	background-color: #F3F1F1;
+}
+
+.navbar-toggle
+{
+	background-color: #00988F, #31A2A2 !important;
+}
+
+.project-name
+{
+	float: left;
+	height: 50px; width: 198px;
+	background-color: #00988F;
+	font-family: logo; font-size: 30px; font-weight: bold; line-height: 30px;
+	padding-top: 10px; padding-bottom: 10px; 
+	text-align: center;
+	color: white;
+}
+
+.chatting
+{
+	height: 48px; width: auto;
+	padding-left: 10px;
+	float: left;
+	background-color: transparent, yellow;
+}
+.chatting .img-box
+{
+	float: left;
+	height: 48px; width: 48px;
+	background-color: transparent, green;
+}
+.chatting .img-box img
+{
+	height: 40px; width: 40px;
+	float: left;
+	margin: 4px;
+}
+.chatting .name
+{
+	float: left;
+	height: 48px; width: auto;
+	background-color: transparent, red;
+}
+.chatting .name .with
+{
+	margin-top: 5px; margin-left: 5px;
+	float: left;
+	font-size: 16px; text-transform: uppercase; font-weight: bold;
+	background-color: transparent, yellow;
+} 
+.chatting .name .status
+{
+	margin-top: 5px; margin-left: 5px;
+	font-size: 10px;
+	color: green;
+	background-color: transparent, orange;
+}
+
+
+.chat-with
+{
+	float: left;
+	height: 50px; width: 100px;
+	background-color: #F2F2F2;
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.usr-option
+{
+	float: right;
+	height: 50px; width: 50px;
+	background-color: transparent;
+	cursor: pointer;
+}
+.usr-option img
+{
+	height: 50px; width: 50px;
+	float: left;
+	border-radius: 50% !important;
+}
+.setting-drop-down
+{
+	height: 300px !important; width: 300px !important;
+	position: absolute !important;
+	top: 60px; right: 5px;
+	background-color: #F3F1F1 !important;
+	z-index: 100000 !important;
+	padding: 15px !important;
+	-webkit-box-shadow: 0px 1px 5px 0px #00988F !important;
+    -moz-box-shadow: 0px 1px 5px 0px #00988F !important;
+    box-shadow: 0px 1px 5px 0px #00988F !important;
+    opacity: 0.9;
+    display: none;
+}
+.setting-box
+{
+	height: 200px; width: 100%; float: left;
+	background-color: white;
+}
+.setting-drop-down:after
+{
+	border-color: #F3F1F1 transparent !important;
+	right: 5px !important;
+	z-index: 100000 !important;
+}
+
+.bubble-top {
+	float: left;
+    position: relative;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    padding: 0px;
+    color: #81D9FF;
+    background: #2C353A;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 2.5px;
+    margin-left: 10px !important;
+    padding: 5px;
+}
+
+.bubble-top:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    border-style: solid;
+    border-width: 0 10px 10px;
+    border-color: #2C353A transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.users-panel, .message-panel, .option-panel
+{
+	margin-top: 50px;
+	float: left;
+}
+
+.users-panel
+{
+	width: 250px;
+	background-color: #2C353A;
+	overflow-y: scroll;
+}
+
+
+.message-panel
+{
+	background-color: white;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.chat-panel
+{
+	height: 100%; width: 100%;
+	background-color: white;
+	float: left;
+}
+
+.receiving-panel
+{
+	float: left;
+	width: 100%;
+	background-color: white, green;
+	overflow-y: scroll; 
+}
+
+.load-btn
+{
+	height: 50px; width: 100px;
+}
+
+
+.receiving-panel::-webkit-scrollbar
+{
+  width: 7px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+.receiving-panel::-webkit-scrollbar-track
+{
+  background-color: white;
+  border-radius: 10px;
+}
+.receiving-panel::-webkit-scrollbar-thumb
+{
+  background: #00988F;
+  border-radius: 10px;
+}
+
+
+
+
+.chatting-with
+{
+	float: left;
+	margin-left: 10px;
+	font-family: ; font-size: 18px; font-weight: bold; line-height: 20px;
+	padding-top: 10px; padding-bottom: 15px;
+	text-transform: uppercase;
+}
+.sending-panel
+{
+	float: left;
+	height: 120px; width: 100% !important;
+	padding-top: 10px; padding-bottom: 10px;
+	background-color: white, orange;
+}
+
+.user-img
+{
+	height: 40px; width: 40px;
+	float: left;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-right: 10px;
+	background-color: #00988F;
+}
+.user-img img
+{
+	float: left;
+	height: inherit; width: inherit;
+}
+.sending-box
+{
+	float: left;
+	background-color: white, red;
+	height: 60px; width: 100%;
+}
+.sending-labels
+{
+	height: 40px; width: 100%;
+	background-color: white, blue;
+	float: left;
+	overflow: hidden;
+	margin-top: 6px;
+}
+.separator
+{
+	position: relative;
+	float: left;
+	height: auto; width: auto;
+	overflow: hidden;
+	background-color: white, lightgreen;
+}
+
+.sendmsg
+{
+	height: 60px; width: 100%;
+	float: left;
+	border: 1px solid #66c1c8;
+	margin: 0px;
+	resize: none;
+	line-height: 15px; font-size: 13px;
+}
+.send-btn
+{
+	float: right;
+	background-color: #00988F;
+	height: auto; width: auto;
+	line-height: 20px; font-size: 20px; font-family: verdanax;
+	color: white;
+	padding-top: 8px; padding-bottom: 8px; padding-left: 20px; padding-right: 20px;
+	border-radius: 3px;
+	cursor: pointer;
+	border: 0px;
+	margin-right: 0px;
+}
+
+
+.option-panel
+{
+	float: left;
+	width: 50px;
+	background-color: yellow;
+	border-left: 1px solid rgba(0, 0, 0 , 0.3);
+}
+.option
+{
+	float: left;
+	height: 49px; width: 49px;
+	border-bottom: 1px solid rgba(0, 0, 0 , 0.3);
+}
+.option img
+{
+	float: left;
+	height: 32px; width: 32px;
+	margin: 9px;
+}
+
+.msg-box
+{
+	float: left;
+	height: auto; width: 100%;
+	background-color: transparent, red;
+}
+.bubble-left {
+	float: left;
+    position: relative;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    padding: 0px;
+    color: #81D9FF;
+    background: #2C353A;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 2.5px;
+    margin-left: 10px !important;
+    padding: 5px;
+}
+
+.bubble-left:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -10px;
+    border-style: solid;
+    border-width: 9px 10px 9px 0;
+    border-color: transparent #2C353A;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+.bubble-right {
+	float: right;
+    position: relative;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    padding: 0px;
+    background: #2C353A;
+    color: #81D9FF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 2.5px;
+    margin-right: 10px !important;
+    padding: 5px;
+}
+
+.bubble-right:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: -10px;
+    border-style: solid;
+    border-width: 9px 0 9px 10px;
+    border-color: transparent #2C353A;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+.time
+{
+	float: right;
+}
+
+.pic-popup
+{
+	height: 220px; width: 370px;
+	position: absolute;
+	background-color: #2C353A;
+	z-index: 100000;
+	margin: auto;
+	padding: 10px;
+	display: inline-block;
+	left: 0; right: 0; top: 0; bottom: 0;
+	border-radius: 3px;
+	margin-top: 100px;
+	display: none;
+	box-shadow: 1px 1px 8px #00988F;
+}
+
+.pic-popup input[type="file"]
+{
+	width: 350px;
+	border-radius: 2px !important;
+	background-color: #00988F;
+	border: 1px solid #00988F;
+	margin-top: 10px;
+}
+.pic-popup input[type="submit"]
+{
+	display: block;
+	width: 350px;
+	border-radius: 2px !important;
+	background-color: #00988F;
+	border: 1px solid #00988F;
+}
+.upload-btn
+{
+	
+}
+.form-caption
+{
+	height: auto; width: 350px;
+	font-family: ; font-size: 25px; 
+	text-align: center; color: white;
+}
+.dp-name
+{
+	float: left;
+	margin-right: 100px;
+}
+.logout
+{
+	margin-top: 25px;
+}
