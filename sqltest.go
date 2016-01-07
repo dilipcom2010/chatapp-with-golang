@@ -9,7 +9,7 @@ type dict map[string]interface{}
 
 func main() {
 	//type list []interface{}
-	db, err := sql.Open("mysql", "root:dkumar@tcp(localhost:3306)/myapps")
+	db, err := sql.Open("mysql", "root:fyogi@tcp(localhost:3306)/myapps")
     fmt.Println(reflect.TypeOf(db))
 	if err != nil {
 		panic(err)
