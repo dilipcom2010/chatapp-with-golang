@@ -1,0 +1,269 @@
+@font-face {
+    font-family: verdanax;
+    src: url("/static/fonts/Verdana.ttf");
+}
+
+.navbar-extended
+{
+	background-color: #333333;
+}
+
+.navbar-toggle
+{
+	float: left;
+	display: block;
+	background-color: #00988F;
+	margin: 0px;
+	border-radius: 3px;
+	float: left;
+	padding-top: 13.5px; padding-bottom: 13.5px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+button:focus
+{
+	outline: 0;
+}
+.navbar-toggle .icon-bar-box
+{
+	float: left;
+	height: auto; width: auto;
+	transition: -webkit-transform 0.7s;
+	-webkit-transform: rotate(-90deg);
+}
+.navbar-toggle .icon-bar
+{
+	background-color: white;
+	height: 3px;
+	width: 30px;
+}
+
+.rotate-icon-bar
+{
+	-webkit-transform: rotate(0deg) !important;
+}
+
+.container
+{
+	margin-top: 50px; margin-left: 0px;
+	padding: 0px;
+	background-color: white, #2c353A;
+	min-width: 100%;
+}
+.container-user
+{
+	background-color: #66c1c8;
+	float: left;
+	height: auto; width: 20%;
+	overflow-y: scroll; overflow-x: hidden;
+}
+.show-users
+{
+	transition: width 0.7s;
+	width: 0px;
+}
+@media (max-width: 768px) {
+  .container-user {
+    width: 0px;
+  }
+}
+
+.container-chat
+{
+	background-color: #EEEEEE;
+	float: left;
+	height: auto; width: 75%;
+	transition: width 0.7s;
+	padding-left: 1%; padding-right: 1%;
+}
+.expand-container-chat
+{
+	width: 95%;
+}
+
+.container-options
+{
+	background-color: #FFFFFF;
+	float: left;
+	height: auto; width: 5%;
+}
+
+.chat-option-box
+{
+	background-color: white;
+	float: left;
+	height: 70px; width: 100%;
+	margin-top: 3px;
+}
+.chat-option
+{
+	background-color: #EEEEEE;
+	float: left; position: relative;
+	height: 70px; width: 33.33333333333333%;
+}
+.chat-option:hover
+{
+	cursor: pointer;
+	background-color: #FFFFFF;
+}
+.img-box
+{
+	float: left; position: relative;
+	height: 45px; width: 100%;
+}
+.img-box img
+{
+	display: block;
+	height: 25px; width: auto;
+	margin-left: auto; margin-right: auto;
+	margin-top: 20px; margin-bottom: 0px;
+}
+.caption
+{
+	padding-top: 5px; padding-bottom: 5px;
+	float: left;
+	text-align: center;
+	line-height: 15px;
+	width: 100%;
+	font-family: para; color: #00988F; font-size: 13px;
+}
+
+#all-user, #groups, #online
+{
+	float: left;
+	height: auto; width: 100%;
+	background-color: #2C353A, lightblue;
+	display: block;
+	padding-bottom: 10px;
+}
+#groups
+{
+	background-color: yellow;
+	display: none;
+}
+#online
+{
+	background-color: green;
+	display: none;
+}
+
+.user-box
+{
+	float: left;
+	height: auto; width: 100%;
+	padding-top: 5px; padding-bottom: 5px;
+	background-color: white;
+	border-bottom: 1px solid #00988F;
+	cursor: pointer;
+}
+.user-box:hover
+{
+	
+}
+.user-pic
+{
+	border-radius: 50%;
+	float:left;
+	margin-left: 10px; margin-right: 10px;
+	height: 40px; width: 40px;
+	background-color: orange;
+	overflow: hidden;
+}
+.user-pic img
+{
+	height: inherit; width: inherit;
+}
+.user-name
+{
+	float: left;
+	background-color: ;
+	line-height: 15px; font-size: 14px; font-family: para;
+	margin-top: 5px;
+	color: #000000;
+}
+.last-talk
+{
+	font-size: 12px;
+	color: #66c1c8;
+}
+.rsvd-msg-count
+{
+	float: right; margin-right: 5px;
+	
+	text-align: center;
+	background-color: orange;
+	border-radius: 15px;
+	line-height: 26px;
+	margin-top: 7px; margin-bottom: 7px;
+	padding-left: 10px; padding-right: 10px;
+}
+
+
+
+
+
+.msg-receiving-area
+{
+	float: left;
+	min-height: 100px;
+	width: 100%;
+	background-color: transparent;
+	overflow-y: scroll;
+}
+.msg-sending-area
+{
+	float: left;
+	background-color: transparent;
+	min-height: 50px;
+	width: 100%;
+	padding-top: 10px; padding-bottom: 10px;
+}
+.msg-area
+{
+	float: left;
+	height: 70px; width: 100%;
+	background-color: transparent;
+}
+.sending-area
+{
+	float: left;
+	height: 50px; width: 100%;
+	background-color: transparent;
+	padding-top: 10px;
+}
+.sender-pic
+{
+	float: left;
+	height: auto; width: 40px;
+	margin-right: 10px;
+	border-radius: 3px;
+}
+.msg-area textarea
+{
+	height: 70px;
+	border: 1px solid #66c1c8;
+	margin: 0px;
+	resize: none;
+	line-height: 15px; font-size: 13px;
+}
+.msg-area textarea:focus
+{
+	border: 1px solid #66c1c8;
+}
+.send-btn
+{
+	float: right;
+	background-color: #66c1c8;
+	height: auto; width: auto;
+	line-height: 14px; font-size: 14px; font-family: verdanax;
+	color: white;
+	padding-top: 8px; padding-bottom: 8px; padding-left: 20px; padding-right: 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 0px;
+}
+.msg-receiving-box
+{
+	height: auto; width: auto;
+	background-color: red;
+	display: block;
+}

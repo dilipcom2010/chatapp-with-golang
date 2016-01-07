@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Starter Template for Bootstrap</title>
+
+        <link href="static/css/bootstrap.css" rel="stylesheet">
+    
+        <link href="static/css/animate.css" rel="stylesheet">
+		<link href="static/css/home.css" rel="stylesheet">
+    
+        <script src="static/js/wow.min.js"></script>
+		<script src="static/js/jquery-1.11.2.min.js"></script>
+		<script src="static/js/home.js"></script>
+        <script src="static/js/socket.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+    </head>
+
+<body>
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-extended navbar-fixed-top" style="border-bottom:0px;">
+		<button type="button" class="navbar-toggle" data-toggle="" data-target="" style="border:0px">
+			<span class="icon-bar-box">
+            <span class="icon-bar"></span>
+            <span class="icon-bar" style="margin-top:6px"></span>
+            <span class="icon-bar" style="margin-top:6px"></span>
+			</span>
+        </button>
+    </div>
+	
+	
+	<div class="container">
+		<div class="container-user">
+			<div class="chat-option-box">
+				<div class="chat-option" onclick="show_hide_user('all-user', 'groups', 'online')"><div class="img-box"><img class="img-responsive" src="static/images/icons/all-users.png"></div><div class="caption">All</div></div>
+				<div class="chat-option" onclick="show_hide_user('groups', 'all-user', 'online')"><div class="img-box"><img class="img-responsive" src="static/images/icons/groups.png"></div><div class="caption">Groups</div></div>	
+				<div class="chat-option" onclick="show_hide_user('online', 'groups', 'all-user')"><div class="img-box"><img class="img-responsive" src="static/images/icons/online.png"></div><div class="caption">Online</div></div>
+			</div>
+			<div id="all-user">
+                {{range $data := $.all_users}}
+				<div class="user-box" onclick="start_chat({{$data.id}})">
+					<div class="user-pic"><img src="static/images/profile-pic/dilip.jpg"></div>
+					<div class="user-name">{{$data.username}}<br><span class="last-talk">how r u</span></div>
+				</div>
+                {{end}}
+				
+			</div>
+			<div id="groups">{{$.id}}</div>
+			<div id="online"></div>
+		</div>
+		<div class="container-chat">
+            <div class="msg-receiving-area" id="MsgArea">hii darling
+            </div>
+            <div class="msg-sending-area">
+                <div class="msg-area">
+                    <img class="sender-pic" src="static/images/profile-pic/dilip.jpg">
+                    <textarea id="sendmsg" from="{{$.id}}" onkeyup="Javascript: if (event.keyCode==13) sendmsg();"></textarea>
+                </div>
+                <div class="sending-area">
+                    <button class="send-btn">SEND</button>
+                </div>
+            </div>      
+        </div>
+		<div class="container-options">hhhhgg</div>
+	<div class="navbar navbar-default navbar-fixed-bottom">hjhjhjhjhjhj</div>
+	</div>
+
+
+<script>
+
+
+</script>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

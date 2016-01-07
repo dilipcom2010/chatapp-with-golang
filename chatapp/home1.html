@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Footle</title>
+
+        <link href="static/css/bootstrap.css" rel="stylesheet">
+    
+        <link href="static/css/animate.css" rel="stylesheet">
+		<link href="static/css/home.css" rel="stylesheet">
+        <link href="static/css/home1.css" rel="stylesheet">
+    
+        <script src="static/js/wow.min.js"></script>
+		<script src="static/js/jquery-1.11.2.min.js"></script>
+		<script src="static/js/home.js"></script>
+        <script src="static/js/home1.js"></script>
+        <script src="static/js/socket1.js"></script>
+        <script type="text/javascript" src="http://www.datejs.com/build/date.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+    </head>
+
+<body>
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-extended navbar-fixed-top" style="border-bottom:0px;" id="body">
+        <div style="height:50px; width:250px; background-color:#00988F; float:left">
+		  <button type="button" class="navbar-toggle" data-toggle="" data-target="">
+			<span class="icon-bar-box">
+            <span class="icon-bar"></span>
+            <span class="icon-bar" style="margin-top:6px"></span>
+            <span class="icon-bar" style="margin-top:6px"></span>
+			</span>
+            </button>
+        <div class="project-name">Footle</div>
+        </div>
+        <div class="chat-with" id="chat-with">
+            <!--<div class="chatting">
+                <div class="img-box">
+                    <img src="/static/images/profile-pic/default.jpg">
+                </div>
+                <div class="name">
+                    <span class="with">Dilip Kumar</span><br>
+                    <span class="status">online</span>
+                </div>
+            </div>-->
+        </div>
+        <div class="usr-option">
+            <img src="{{$.dp}}">
+        </div>
+        <div class="bubble-top setting-drop-down">
+          
+        </div>
+    </div>
+	
+
+    <div class="pic-popup wow bounceInDown">
+        <div class="form-caption">Upload Picture</div>
+        <form method="post" action="/room"  enctype="multipart/form-data">
+            <label class="upload-btn">
+                <input type="file" name="profile-pic" class="btn btn-primary btn-lg" required>
+            </label>
+            <input class="btn btn-primary btn-lg" type="submit" value="upload">
+        </form>
+        <a class="btn btn-default logout" href="/logout">Logout</a>
+    </div>
+
+
+    <div class="users-panel">
+        <div class="chat-option-box">
+            <div class="chat-option" onclick="show_hide_user('all-user', 'groups', 'online')"><div class="img-box"><img class="img-responsive" src="static/images/icons/all-users.png"></div><div class="caption">All</div></div>
+            <div class="chat-option" onclick="show_hide_user('groups', 'all-user', 'online')"><div class="img-box"><img class="img-responsive" src="static/images/icons/groups.png"></div><div class="caption">Groups</div></div>   
+            <div class="chat-option" onclick="show_hide_user('online', 'groups', 'all-user')"><div class="img-box"><img class="img-responsive" src="static/images/icons/online.png"></div><div class="caption">Projects</div></div>
+        </div>
+        <div id="all-user">
+            {{range $data := $.all_users}}   
+            <div class="user-box" onclick="chatting({{$.id}}, {{$data.Id}}, '{{$data.FirstName}} {{$data.LastName}}', {{$data.selfie}}, {{$.dp}})">
+                <div class="user-pic"><img src="{{$data.selfie}}"></div>
+                <div class="user-name">{{$data.FirstName}}<br><span class="last-talk" id="online{{$data.Id}}"></span></div>
+                <div id="rsv_msg_cnt_of{{$data.Id}}" class="rsvd-msg-count"></div>
+            </div>
+            {{end}}   
+                
+        </div>
+        <div id="groups">comming soon..</div>
+        <div id="online">comming soon..</div>
+    </div>
+
+    <div class="message-panel">
+        <div class="chat-panel"><h1>welcome {{$.user}}<br>Lets Start Chatting...</h1></div>
+        <!--<div class="chat-panel">
+            <div class="receiving-panel">
+                <div class="msg-box"><div class="bubble-left">www.css3-generator.weebly.com</div></div>
+                <div class="msg-box"><div class="bubble-left">www.css3-generator.weebly.com<br><br><br></div></div>
+                <div class="msg-box"><div class="bubble-right">www.css3-generator.weebly.comcgkgctggkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkktxutrxeuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuufxruyfrrr gvhjcggggggggggggggggg ygcytttttttttttttttttt ytttttttvggggggggggg<span class="time">jjjj</span></div></div>
+                <div class="msg-box"><div class="bubble-right">www.css3-generator.weebly.com<span class="time">jjjj</span></div></div>
+            </div>
+            <div class="sending-panel">
+                <div class="separator">
+                    <div class="user-img"><img src="static/images/profile-pic/dilip.jpg"></div>
+                </div>
+                <div class="separator sending-wrapper">
+                    <div class="sending-box">
+                        <textarea class="sendmsg" id="sendmsg" from="{{$.id}}" onkeyup="Javascript: if (event.keyCode==13) sendmsg(this);"></textarea>
+                    </div>
+                    <div class="sending-labels">
+                        <button class="send-btn">SEND</button>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+    <div class="option-panel">
+        <div class="option"><img src="/static/images/icons/search.png"></div>
+        <div class="option"><img src="/static/images/icons/attach.png"></div>
+        <div class="option"><img src="/static/images/icons/help.png"></div>
+    </div>
+	
+	
+
+<script>
+
+
+</script>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
